@@ -8,13 +8,14 @@ import{GetPosts} from '../../actions/post';
 import Spinner from '../layout/Spinner';
 
 import PostItem from './PostItem';
- import PostForm from './PostForm'
+ import PostForm from './PostForm';
+
+
 const Posts = ({GetPosts,post:{posts,loading}}) => {
 
     useEffect(() => {
         GetPosts();
-
-
+        
     }, [GetPosts]);
 
 
@@ -26,7 +27,7 @@ const Posts = ({GetPosts,post:{posts,loading}}) => {
     Posts
 </h1>
 
-<p className="lead">
+<p className="lead ">
 
     <i className="fas fa-user">
         Welcom
@@ -40,7 +41,7 @@ const Posts = ({GetPosts,post:{posts,loading}}) => {
 
 
 
-    <div className="posts">
+    <div className="posts row ">
 
         {posts.map(post=>(
  

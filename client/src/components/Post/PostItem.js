@@ -1,9 +1,10 @@
-import React ,{Fragment} from 'react'
+import React ,{Fragment,useEffect} from 'react'
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Moment from 'react-moment';
 import Spinner from '../layout/Spinner';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {Add_Like,Remove_Like,DeletePost} from '../../actions/post';
 import {connect }     from 'react-redux' ; //for like and comment actions
 const PostItem = ({Add_Like,Remove_Like,DeletePost,auth,
@@ -13,10 +14,17 @@ const PostItem = ({Add_Like,Remove_Like,DeletePost,auth,
   }) => 
   
   {
+    useEffect(() => {
+      AOS.init({
+        duration : 2000
+      });
+    }, []);
 return _id? 
-<div class="leftcolumn">
+<div class="leftcolumn " data-aos="zoom-in-down">
 <div class="card">
-<div className="row">
+<div className="col-md-6 col-sm-12 ">
+  <div className="inner">
+
 {imagepost&&
           <img
           className=" fakeimg"
@@ -30,7 +38,7 @@ return _id?
         />
           }
 
-      
+      </div>
         <div class="post bg-white my-1 p-1 ">
          
         
@@ -64,7 +72,7 @@ return _id?
           </p>
          
          
-          <p className="post-date"><Moment format='YYYY/MM/DD'>{date}</Moment></p>
+          <p className="post-date"><i class="far fa-calendar"></i><Moment format='YYYY/MM/DD'>{date}</Moment></p>
 
 
 {ShowActionsa&&<Fragment>
@@ -91,8 +99,8 @@ return _id?
              }
         {
           _id&&
-          <Link to={`/post/${_id}`} class="btn btn-primary">
-          comments {comments.length>0&&(
+          <Link to={`/post/${_id}`} class="btn ">
+          <i class="far fa-comments"></i> {comments.length>0&&(
            <span className="comment-count">{comments.length}</span>
 
           )}

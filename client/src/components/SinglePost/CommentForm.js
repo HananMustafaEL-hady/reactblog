@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Add_Comment} from '../../actions/post'
-import { post } from 'request';
+// import { post } from 'request';
 import { Link } from 'react-router-dom';
 
 const CommentForm = ({postId,Add_Comment,auth}) => {
@@ -19,14 +19,11 @@ const CommentForm = ({postId,Add_Comment,auth}) => {
           Add_Comment(postId,{text});
            setText('');
 
-         
 
+           
+        
         }
-      
-      
       }
-        
-        
         >
           <textarea cols="30" rows="5"
            placeholder="Create a post"
