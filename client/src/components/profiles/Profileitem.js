@@ -1,6 +1,7 @@
-import React from 'react';
+import React ,{Fragment,useEffect} from 'react';
 import PropTypes from 'prop-types';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import {Link} from 'react-router-dom';
 
 const Profileitem = ({profile:{
@@ -11,8 +12,14 @@ const Profileitem = ({profile:{
     skills
 
 }}) => {
+
+    useEffect(() => {
+        AOS.init({
+          duration : 100
+        });
+      }, []);
     return (
-        <div className="profile bg-yellow">
+        <div className="profile bg-yellow" data-aos="fade-up">
             <img src={avatar} alt="" className="round-img"/>
             <div>
 <h2>{name}</h2>

@@ -20,7 +20,7 @@ const PostItem = ({Add_Like,Remove_Like,DeletePost,auth,
       });
     }, []);
 return _id? 
-<div class="leftcolumn " data-aos="zoom-in-down">
+<div class="leftcolumn " data-aos="fade-left">
 <div class="card">
 <div className="col-md-6 col-sm-12 ">
   <div className="inner">

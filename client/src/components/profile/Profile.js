@@ -1,4 +1,4 @@
-import React ,{Fragment,useEffect}from 'react'
+import React ,{Fragment,useEffect,useState}from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
@@ -6,14 +6,17 @@ import Spinner from '../layout/Spinner';
 import ProfileAbout from './ProfileAbout'
 import Profiledisplay from './Profiledisplay';
 import ProfileExperience from './ProfileExperience';
-import ProfileEducation from'./PrfofileEducation'
+import ProfileEducation from'./PrfofileEducation';
+import {Upload_img} from '../../actions/user';
+
 import {get_all_profiles, get_profile_id} from '../../actions/profile';
 import UserItem from '../user/UserItem';
 import { Redirect } from "react-router-dom";
 
 
-const Profile = ({get_profile_id,profile:{profile,loading},auth,match}) => {
+const Profile = ({get_profile_id,profile:{profile,loading},Upload_img,auth,match}) => {
 
+    const [img_upload,Setimg_upload]=useState('');
 
     useEffect(
         async() => {
@@ -53,7 +56,39 @@ const Profile = ({get_profile_id,profile:{profile,loading},auth,match}) => {
 
 <div class="profile-grid my-1">
 
+{auth.isAuthenticated&&auth.loading==false&&auth.user._id==profile.user._id&&(
+
+<Fragment>  <form class="form my-1"   onSubmit={e=>{
+          
+          e.preventDefault();
+          
+          Upload_img(auth.user._id,img_upload)       
+
+         
+
+        }
+      
+      
+      }
+>
+
+      <input class="choose-file" type="file" name="image "  onChange ={e=>Setimg_upload(e)}  />
+
+      <button   class="upload btn btn-primary" type="submit" >Upload</button>
+        
+        
+        
+
+        </form>
+                               
+
+
+
+</Fragment>
+)}
+
     <Profiledisplay profile= {profile} />
+
     <ProfileAbout  profile= {profile} />
 
    
@@ -120,4 +155,4 @@ const mapStateToProps =state=>({
 
 })
 
-export default connect(mapStateToProps,{get_profile_id}) (Profile)
+export default connect(mapStateToProps,{get_profile_id,Upload_img}) (Profile)

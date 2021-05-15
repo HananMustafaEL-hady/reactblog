@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import PropTypes from "prop-types";
 import {logout} from "../../actions/auth"
 
-export const Navbar = ({ auth: { isAuthenticated, loading},logout}) => {
+export const Navbar = ({ auth: { isAuthenticated, loading, user},logout}) => {
 
 const authLinks=(
   <ul>
@@ -29,13 +29,18 @@ Dashboard
 
 
  <li>
- <Link to="/userprofile">
+   {user &&
+   <Fragment>
+
+ <Link to={`/profile/${user._id}`}>
  <i class="far fa-user"></i></Link>
       
- </li>
 
+</Fragment>
 
-
+   
+   }
+    </li>
 
       <li>
 

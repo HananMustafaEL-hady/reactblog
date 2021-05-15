@@ -1,7 +1,9 @@
-import React from 'react'
+import React ,{Fragment,useEffect} from 'react';
 import PropTypes from 'prop-types'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const profiledisplay = ({profile:{
+const Profiledisplay = ({profile:{
     City,
     status,
     age,
@@ -10,8 +12,13 @@ const profiledisplay = ({profile:{
         name, avatar,image
     }
 }}) => {
+  useEffect(() => {
+    AOS.init({
+      duration : 2000
+    });
+  }, []);
     return (
-        <div class="profile-top bg-primary p-2">
+        <div class="profile-top bg-primary p-2" data-aos="fade-up-right">
         
        
         <img
@@ -66,10 +73,10 @@ const profiledisplay = ({profile:{
     )
 }
 
-profiledisplay.propTypes = {
+Profiledisplay.propTypes = {
 
 profile:PropTypes.object.isRequired,
 
 }
 
-export default profiledisplay
+export default Profiledisplay
