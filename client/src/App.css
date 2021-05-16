@@ -169,8 +169,8 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
-  color: rgb(212, 100, 47);
+  background: rgb(24, 223, 107);
+  color: rgb(238, 241, 238);
 }
 
 .btn-dark,
@@ -975,4 +975,12 @@ h6 {
 
   background-position: center;
   background-size: cover;
+}
+
+.bg-light {
+  background-image: url("../src/image/Social\ media-bro\ \(1\).png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  color: #17a2b8;
 }
