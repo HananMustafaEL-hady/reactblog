@@ -23,7 +23,7 @@ const Profiledisplay = ({profile:{
        
         <img
           class="round-img my-1"
-          src={`http://localhost:5000/api/upload/show/${image}`}
+          src={`/api/upload/show/${image}`}
           alt=""
         />
 
