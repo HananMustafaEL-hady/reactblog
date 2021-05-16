@@ -70,7 +70,7 @@ const ProfileAbout = ({
           {skills.map((skill,index)=>(
               <div key={index} className="p-1">
 
-                  <i className="fas fa-check">
+                  <i >
                       {skill}
                   </i>
 

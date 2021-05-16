@@ -977,6 +977,13 @@ h6 {
   background-size: cover;
 }
 
+.container2 {
+  background-image: url("../src/image/Profile\ Interface-bro.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  color: #17a2b8;
+}
 .bg-light {
   background-image: url("../src/image/Social\ media-bro\ \(1\).png");
   background-position: center;

@@ -27,7 +27,7 @@ const Posts = ({GetPosts,post:{posts,loading}}) => {
     Posts
 </h1>
 
-<p className="lead ">
+<p className="lead container2 ">
 
     <i className="fas fa-user">
         Welcom
