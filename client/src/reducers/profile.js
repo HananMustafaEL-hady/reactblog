@@ -1,5 +1,6 @@
 import { get_profile,profile_fail,
-    profile_clear,update_profile, get_profiles } from "../actions/type";
+    profile_clear,update_profile,
+     get_profiles } from "../actions/type";
 
 const initialState={
 

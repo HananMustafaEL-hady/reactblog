@@ -42,13 +42,12 @@ useEffect(() => {
     City:loading || !profile.City? '' :profile.City,
     age:loading || !profile.age? '' :profile.age,
     status:loading || !profile.status? '' :profile.status,
-    skills:loading || !profile.skills? '' :profile.skills,
+    skills:loading || !profile.skills? '' :profile.skills.join(','),
     bio:loading || !profile.bio? '' :profile.bio,
     facebook:loading || !profile.social? '' :profile.facebook,
     twitter:loading || !profile.social? '' :profile.twitter,
     linkedin:loading || !profile.social? '' :profile.linkedin,
     instagram:loading || !profile.social? '' :profile.instagram,
-    youtube:loading || !profile.social? '' :profile.youtube,
   
    })
  
@@ -196,4 +195,7 @@ const mapStateToProps=state=>({
 profile:state.profile
 })
   
-export default  connect(mapStateToProps,{createprofile,get_current_profile}) (withRouter(EditProfile))
+export default  connect(mapStateToProps,
+  
+  {createprofile,get_current_profile})
+   (withRouter(EditProfile))

@@ -47,14 +47,13 @@ try {
 
 
 
-
 export const  createprofile=(formData,history,edit=false)=>async dispatch=>{
 
 try {
 
     const config={
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json'            
         }
     }
 
@@ -65,17 +64,16 @@ dispatch({
 
     type:get_profile,
     payload:res.data
-})
+});
     
 
 // dispatch(setAlert(edit?'profile update':'profile created','success'));
+history.push('/dashboard');
 
-if(!edit){
+// if(!edit){
 
-    history.push('/dashboard');
-}
-
-
+//     history.push('/dashboard');
+// }
 }
 
 catch (err) {

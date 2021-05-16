@@ -12,7 +12,7 @@ export const Landing = ({isAuthenticated}) => {
     return (
         <div>
                <section className="landing">
-      <div >
+      <div className="dark-overlay">
         <div className="landing-inner">
           <h1 className="x-large" >welcome to our website </h1>
           

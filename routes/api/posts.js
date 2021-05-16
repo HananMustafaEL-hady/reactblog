@@ -403,5 +403,42 @@ res.json(post.comments);
     
 
 
+// get posts by user id
+
+
+
+
+router.get('/user/:id',async(req,res)=>{
+
+    try {
+    
+    
+        const post=await Post.find({user:req.params.id});
+
+        if(!post){
+
+      return res.status(404).json({msg:'post not found for this user'});
+        }
+
+    
+        res.send(post);
+        
+    } catch (err) {
+        if(err.kind==='ObjectId'){
+
+            return res.status(404).json({msg:'not ObjectId'});
+              }
+    
+        console.error(err.message);
+        res.status(500).send('Server Error');
+        
+    }
+    
+    
+    });
+
+
+
+
 
 module.exports=router;
