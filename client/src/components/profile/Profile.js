@@ -87,6 +87,8 @@ const Profile = ({get_profile_id,profile:{profile,loading},Upload_img,auth,match
 </Fragment>
 )}
 
+
+
     <Profiledisplay profile= {profile} />
 
     <ProfileAbout  profile= {profile} />
