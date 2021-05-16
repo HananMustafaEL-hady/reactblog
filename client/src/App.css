@@ -227,12 +227,13 @@ img {
 
 /* Overlay */
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  margin-top: 20px;
 }
 
 /* Forms */
@@ -333,13 +334,14 @@ button {
 
 /* Landing Page */
 .landing {
+  margin-top: 45px;
   position: relative;
-  background: url("../src/image/home.png") no-repeat center center/cover;
-  height: 100vh;
+  background: url("../src/image/Chakras-amico.png") center/cover;
+  height: 65vh;
 }
 
 .landing-inner {
-  color: #fff;
+  color: rgb(248, 247, 247);
   height: 100%;
   width: 80%;
   margin: auto;
@@ -990,4 +992,8 @@ h6 {
   background-size: cover;
   width: 100%;
   color: #17a2b8;
+}
+
+.x-large {
+  color: #115b66;
 }

@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React ,{Fragment,useEffect} from 'react';
 import PropTypes from 'prop-types'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ProfileAbout = ({
     profile :{
         bio,
@@ -12,8 +13,13 @@ const ProfileAbout = ({
 
     }
 })=> {
+    useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+      }, []);
     return (
-        <div class="profile-about bg-light p-2">
+        <div class="profile-about bg-light p-2" >
                 <p class="lead">{status}</p>
         <p class="lead">{City}</p>
         <p class="lead">{age}</p>

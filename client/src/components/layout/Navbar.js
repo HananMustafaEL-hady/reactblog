@@ -71,8 +71,11 @@ const  guestLinks=(
     profiles</Link>
       
  </li> */}
+<li>
+<Link to="/">
+       Blog</Link>
+       </li>
   <li>
-    
     <Link to="/register">
     
     <i class="fas fa-user-plus"></i></Link>
@@ -90,8 +93,7 @@ const  guestLinks=(
     return (
               <nav className="navbar bg-dark">
     
-        <Link to="/">
-       DevConnector</Link>
+       
       
 
        <Link to="/Posts">
@@ -101,6 +103,7 @@ const  guestLinks=(
    
       
      { (<Fragment>{ isAuthenticated ? authLinks : guestLinks  }</Fragment>)}
+    
     </nav>
        
     );
