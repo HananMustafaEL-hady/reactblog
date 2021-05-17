@@ -9,7 +9,8 @@ const ProfileAbout = ({
         status,
         age,
         social,
-        skills
+        skills,
+        user
 
     }
 })=> {
@@ -20,7 +21,12 @@ const ProfileAbout = ({
       }, []);
     return (
         <div class="profile-about bg-light p-2" >
+                <p class="lead">{user.email}</p>
+
                 <p class="lead">{status}</p>
+
+
+
         <p class="lead">{City}</p>
         <p class="lead">{age}</p>
 

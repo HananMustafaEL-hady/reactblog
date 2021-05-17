@@ -75,3 +75,7 @@ export const RemoveComment="RemoveComment";
 
 
 export const uploadimgpost="uploadimgpost";
+
+
+
+export const Edit_Email="Edit_Email";

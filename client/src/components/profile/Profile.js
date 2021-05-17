@@ -50,8 +50,7 @@ const Profile = ({get_profile_id,profile:{profile,loading},Upload_img,auth,match
             {auth.isAuthenticated&&auth.loading==false&&auth.user._id==profile.user._id&&(
 
                 <Link to='/edit-profile' className='btn btn-dark'>
-                    Edit Profile
-                </Link>
+<i class="fas fa-edit"></i>                </Link>
             )}
 
 <div class="profile-grid my-1">
@@ -90,6 +89,18 @@ const Profile = ({get_profile_id,profile:{profile,loading},Upload_img,auth,match
 
 
     <Profiledisplay profile= {profile} />
+
+    {auth.isAuthenticated&&auth.loading==false&&auth.user._id==profile.user._id&&(
+        <Fragment>
+                <Link to="Edit-Email" class="btn btn-light">
+            <i class="fas fa-graduation-cap text-primary">
+                </i> <i class="fas fa-edit"></i> Email</Link>
+        </Fragment>
+
+
+
+                            )}
+
 
     <ProfileAbout  profile= {profile} />
 

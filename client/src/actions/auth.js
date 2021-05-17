@@ -166,10 +166,5 @@ export const login =(email,password)=> async dispatch=>{
 export const logout=()=>dispatch=>{
     dispatch({type:profile_clear})
 
-
-
-dispatch({
-
-    type:LOGOUT
-} );
+       dispatch({type:LOGOUT} );
 }

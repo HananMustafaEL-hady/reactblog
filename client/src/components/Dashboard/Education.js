@@ -9,6 +9,8 @@ const Education = ({education,deleteEdu}) => {
 
 const Educations =education.map(Edu=>(
 
+
+    Edu&&
     <tr key={Edu._id}>
 
 <td>{Edu.faculty}</td>

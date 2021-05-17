@@ -32,7 +32,7 @@ Dashboard
    {user &&
    <Fragment>
 
- <Link to={`/profile/${user._id}`}>
+ <Link to={`/Profileauth/${user._id}`}>
  <i class="far fa-user"></i></Link>
       
 

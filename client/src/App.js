@@ -13,7 +13,9 @@ import AddEducation from './components/profileForm/AddEducation';
 import Profiles from './components/profiles/Profiles'
 import EditProfile from './components/profileForm/EditProfile';
 import AddExperiences from './components/profileForm/AddExperiences';
-import Createprofile from './components/profileForm/Createprofile'
+import Createprofile from './components/profileForm/Createprofile';
+import EditEmailAuth from './components/profileForm/EditEmailAuth';
+
 import Dashboard from './components/Dashboard/Dashboard';
 import  PrivateRoute from './components/Dashboard/Routing/PrivateRoute'
 import Posts from './components/Post/Posts';
@@ -64,6 +66,8 @@ const App=()=> {
 <Route  exact path="/profiles" component ={Profiles}/>
 
 <Route  exact path="/Profile/:id" component ={Profile}/>
+<Route  exact path="/Profileauth/:id" component ={Profile}/>
+
 
 <Route   path="/Posts" component ={Posts}/>
 
@@ -74,6 +78,8 @@ const App=()=> {
 
 <PrivateRoute  exact path="/dashboard" component ={Dashboard}/>
 <PrivateRoute  exact path="/create-profile" component ={Createprofile}/>
+<PrivateRoute  exact path="/Edit-Email" component ={EditEmailAuth}/>
+
 <PrivateRoute  exact path="/edit-profile" component ={EditProfile}/>
 <PrivateRoute  exact path="/addExperiences" component ={AddExperiences}/>
 <PrivateRoute  exact path="/addeduction" component ={AddEducation}/>

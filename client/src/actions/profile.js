@@ -1,6 +1,7 @@
 import axios from  'axios';
 
 
+import {setAlert} from './alert';
 
 import{
 profile_fail,
@@ -8,7 +9,8 @@ get_profile,
 update_profile,
 profile_clear,
 delete_account,
-get_profiles
+get_profiles,
+Edit_Email
 
 } from './type'
 
@@ -67,7 +69,7 @@ dispatch({
 });
     
 
-// dispatch(setAlert(edit?'profile update':'profile created','success'));
+dispatch(setAlert('profile update','success'));
 history.push('/dashboard');
 
 // if(!edit){
@@ -400,5 +402,63 @@ export const get_profile_id=userid=>async dispatch=>{
     }
 
 
+
+
+
+/********************Edit email*****************/
+
+
+export const editemail=(formData,history)=>async dispatch=>{
+
+    try {
+    
+        const config={
+            headers:{
+                'Content-Type':'application/json'            
+            }
+        }
+    
+    
+    const res=await axios.patch('/api/users/email',formData,config);
+    
+    dispatch({
+    
+        type:Edit_Email,
+        payload:res.data
+    });
+        
+    
+     dispatch(setAlert('Email update','success'));
+    history.push('/dashboard');
+    
+  
+    }
+    
+    catch (err) {
+        console(err.response.data);
+        const errors=err.response.data;
+        if(errors){
+            errors.forEach(err=> {
+          
+                // console.log(err.msg);
+                dispatch(setAlert(err.msg,'error'));
+    
+                // alert(err.msg);
+    
+          
+            })
+            
+        }
+        
+        dispatch({
+            type:profile_fail,
+            payload:{msg:err.response.statusText,status:err.response.status}
+        });
+        
+    }
+    
+    
+    }
+    
 
 

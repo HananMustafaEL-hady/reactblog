@@ -18,7 +18,16 @@ import {Link} from 'react-router-dom'
 
         <Link to="addeduction" class="btn btn-light">
             <i class="fas fa-graduation-cap text-primary">
-                </i> Add Education</Link >
+                </i> Add Education</Link>
+
+
+
+
+                <Link to="Edit-Email" class="btn btn-light">
+            <i class="fas fa-graduation-cap text-primary">
+                </i> Edit Email</Link>
+
+
       </div>
 
         </Fragment>

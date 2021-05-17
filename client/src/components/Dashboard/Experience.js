@@ -7,8 +7,9 @@ import {deleteEXp} from '../../actions/profile';
 
 const Experience = ({experience,deleteEXp}) => {
 
-
 const experiences =experience.map(exp=>(
+
+    exp&&
 
     <tr key={exp._id}>
 

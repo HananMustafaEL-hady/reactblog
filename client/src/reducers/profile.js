@@ -1,6 +1,6 @@
 import { get_profile,profile_fail,
     profile_clear,update_profile,
-     get_profiles } from "../actions/type";
+     get_profiles,Edit_Email } from "../actions/type";
 
 const initialState={
 
@@ -26,6 +26,7 @@ export  default function (state=initialState,action){
 
         case get_profile:
         case update_profile:
+       case Edit_Email:
 
 
         return {
@@ -51,7 +52,7 @@ export  default function (state=initialState,action){
             ...state,
             profile:null,
             
-            loading :false
+            loading :true
         }
 
         case get_profiles:

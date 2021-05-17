@@ -58,10 +58,18 @@ profile!==null?
 
 <DashbordEdit/>
 
-<Experience experience={profile.experience} />
+{
+    profile.experience&&
+    <Experience experience={profile.experience} />
 
 
-<Education education={profile.education} />
+}
+
+{profile.education&&
+
+    <Education education={profile.education} />
+
+}
 
 
 
