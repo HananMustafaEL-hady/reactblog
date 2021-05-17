@@ -20,6 +20,7 @@ import Posts from './components/Post/Posts';
 import Profile from './components/profile/Profile';
 import Post from './components/SinglePost/Post';
 import UserAuth from './components/user/UserAuth';
+import Alertcompoent from './components/layout/Alert';
 import UserItem from './components/user/UserItem';
 
 
@@ -52,6 +53,8 @@ const App=()=> {
 
 
 <section className="container">
+  <Alertcompoent/>
+
   <Switch>
 <Route  exact path="/register" component ={Register}/>
 

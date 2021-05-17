@@ -1,5 +1,5 @@
-export const Set_alert='Set_alert';
-export const Remove_alert='Remove_alert';
+export const SET_ALERT='SET_ALERT';
+export const REMOVE_ALERT='REMOVE_ALERT';
 
 export const Register_success=" Register_success";
 

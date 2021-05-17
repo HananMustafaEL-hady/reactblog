@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {login} from '../../actions/auth';
+import {setAlert} from '../../actions/alert';
 
 
-export const Login = ({login,isAuthenticated}) => 
+export const Login = ({login,isAuthenticated ,setAlert}) => 
 
 {
 
@@ -86,6 +87,7 @@ if(isAuthenticated){
              name="email"
               value={email}
               onChange={e=>onChange(e)}
+              required
             
 
             />
@@ -97,6 +99,7 @@ if(isAuthenticated){
               name="password"
               value={password}
               onChange={e=>onChange(e)}
+              required
                 
             />
           </div>
@@ -129,4 +132,4 @@ const mapStateProps=state=>({
   isAuthenticated: state.auth.isAuthenticated
 
 });
-export default  connect(mapStateProps, { login }) (Login);
+export default  connect(mapStateProps, { login  , setAlert}) (Login);

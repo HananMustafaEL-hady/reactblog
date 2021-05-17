@@ -4,7 +4,9 @@ import {register } from '../../actions/auth'
 import {Link, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-export const Register = ({register,isAuthenticated}) => {
+import {setAlert} from '../../actions/alert';
+
+export const Register = ({register,isAuthenticated,setAlert}) => {
 
 const[formData,setFormData]=useState({
     name:'',
@@ -24,6 +26,7 @@ const onSubmit= async e=>{
     if(password!==password2){
 
 console.log('passwords do not match');
+setAlert('passwords do not match','error');
 
     }
     else{
@@ -90,6 +93,8 @@ f
               name="name"
               value={name}
               onChange={e=>onChange(e)}
+              required
+
                />
           </div>
           <div className="form-group">
@@ -98,6 +103,8 @@ f
              name="email"
               value={email}
               onChange={e=>onChange(e)}
+              required
+
          
             
             />
@@ -113,6 +120,8 @@ f
               name="password"
               value={password}
               onChange={e=>onChange(e)}
+              required
+
             />
           </div>
           <div className="form-group">
@@ -122,6 +131,8 @@ f
               name="password2"
               value={password2}
               onChange={e=>onChange(e)}
+              required
+
             />
           </div>
           <input type="submit" class="btn btn-primary" value="Register" />
@@ -151,4 +162,4 @@ const mapStateProps=state=>({
   isAuthenticated: state.auth.isAuthenticated
 
 });
-export default connect(mapStateProps,{ register}) (Register);
+export default connect(mapStateProps,{ register,setAlert}) (Register);

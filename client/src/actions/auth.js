@@ -5,6 +5,7 @@ import{Register_success,Register_fail,userloaded,
     Login_success,
     profile_clear} from './type';
  
+    import {setAlert} from './alert';
 
 
 
@@ -47,8 +48,13 @@ try {
     if(errors){
 
         errors.forEach(err=> {
-            console.log(err.msg);
-            
+          
+            // console.log(err.msg);
+            dispatch(setAlert(err.msg,'error'));
+
+            // alert(err.msg);
+
+      
         }
         
         );
@@ -131,8 +137,10 @@ export const login =(email,password)=> async dispatch=>{
     
             errors.forEach(err=> {
               
-                console.log("ffe");
-                console.log(err.msg);
+                // console.log(err.msg);
+                dispatch(setAlert(err.msg,'error'));
+
+                // alert(err.msg);
 
           
             }

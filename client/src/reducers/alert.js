@@ -1,22 +1,18 @@
+import { SET_ALERT, REMOVE_ALERT } from '../actions/type';
 
-import {Remove_alert,Set_alert}  from '../actions/type'
+const initialState = [];
 
-const initialState=[];
+function alertReducer(state = initialState, action) {
+  const { type, payload } = action;
 
-
-
-export default function (state=initialState,action){
-
-const {type,payload}=action;
-    switch(type){
-
-case 'Set_alert':
-    return [...state,payload];
-
-case 'Remove_alter':
- return state.filter(alert=>alert.id!==payload)
-
- default: return state;
+  switch (type) {
+    case SET_ALERT:
+      return [...state, payload];
+    case REMOVE_ALERT:
+      return state.filter((alert) => alert.id !== payload);
+    default:
+      return state;
+  }
 }
 
-}
+export default alertReducer;
