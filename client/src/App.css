@@ -997,3 +997,22 @@ h6 {
 .x-large {
   color: #115b66;
 }
+
+.path2 {
+  width: 55%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  background-image: url("../src/image/Login-amico.png");
+
+  /* background-image: url("https://render.fineartamerica.com/images/rendered/default/print/8.000/5.875/break/images-medium-5/polygonal-blue-and-purple-background-low-poly-texture-polygon-background-sergey-yarlykov.jpg"); */
+  background-position: center;
+  background-size: cover;
+  /* backgrpund: no-repeat; */
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  padding: 15px 0 50px 50px;
+}

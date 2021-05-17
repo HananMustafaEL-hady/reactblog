@@ -81,9 +81,9 @@ f
 
 
           </div> */}
-        <h1 class="large text-primary">Sign Up</h1>
+        <h1 class="large text-primary ">Sign Up</h1>
         <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
-        <form className="form"  onSubmit={e=>onSubmit(e)} >
+        <form className="form main"  onSubmit={e=>onSubmit(e)} >
           <div className="form-group">
             <input type="text"
              placeholder="Name"
@@ -125,10 +125,15 @@ f
             />
           </div>
           <input type="submit" class="btn btn-primary" value="Register" />
+          <div  className="path2">
+  
+  </div>
         </form>
+        
         <p className="my-1">
           Already have an account? <Link  className="btn btn-Warning "    to="/login">Sign In</Link>
         </p>
+
       </Fragment>
     )
 };
