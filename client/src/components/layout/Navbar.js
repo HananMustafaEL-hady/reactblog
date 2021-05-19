@@ -10,7 +10,9 @@ export const Navbar = ({ auth,logout}) => {
 
 const authLinks=(
   <ul>
+    
     <li>
+      
     <Link to ="/dashboard">
 <i className="fas fa-user"/>{' '}
 
@@ -28,6 +30,14 @@ Dashboard
     profiles</Link>
       
  </li> */}
+
+ 
+   <li>
+ <Link to="/Posts">
+    Blog</Link>
+      
+ </li>
+
 
 
  <li>
@@ -63,6 +73,7 @@ Dashboard
       </Link>
       
       </li> 
+     
     
 </ul>
 );
@@ -100,9 +111,9 @@ const  guestLinks=(
        
       
 
-       <Link to="/Posts">
+       {/* <Link to="/Posts">
        Home</Link>
-      
+       */}
       
    
       

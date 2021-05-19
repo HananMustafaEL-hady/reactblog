@@ -78,7 +78,7 @@ const PostItem = ({
                       <i class="fas fa-thumbs-down"></i>
                     </button>
                   )}
-                  {!post?<Spinner/>: (
+                  {! post?<Spinner/>: (
                     <Link to={`/post/${post._id}`} class="btn ">
                       <i class="far fa-comments"></i>{" "}
                       {post.comments.length > 0 && (
