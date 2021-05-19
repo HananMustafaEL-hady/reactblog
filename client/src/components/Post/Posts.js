@@ -11,7 +11,10 @@ import PostItem from './PostItem';
  import PostForm from './PostForm';
 
 
-const Posts = ({GetPosts,post:{posts,loading}}) => {
+
+ 
+
+const Posts = ({GetPosts,posts}) => {
 
     useEffect(() => {
         GetPosts();
@@ -19,7 +22,7 @@ const Posts = ({GetPosts,post:{posts,loading}}) => {
     }, [GetPosts]);
 
 
-    return loading ||!posts?<Spinner/>: (<Fragment>
+    return !posts?<Spinner/>: (<Fragment>
 
 
 
@@ -45,7 +48,7 @@ const Posts = ({GetPosts,post:{posts,loading}}) => {
 
         {posts.map(post=>(
  
-            <PostItem Key={post._id} post={post}/>
+            <PostItem  post={post}/>
         ))}
     </div>
 
@@ -64,7 +67,7 @@ Posts.propTypes = {
 }
 
 const mapStateToProps=state=>({
- post:state.post
+ posts:state.post.posts
 });
 
 export default connect(mapStateToProps,{

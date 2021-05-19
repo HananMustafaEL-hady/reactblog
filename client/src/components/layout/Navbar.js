@@ -1,10 +1,12 @@
-import React,{ Fragment } from 'react'
+import React,{ Fragment ,useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from "prop-types";
 import {logout} from "../../actions/auth"
 
-export const Navbar = ({ auth: { isAuthenticated, loading, user},logout}) => {
+import {loadUser} from './../../actions/auth'
+export const Navbar = ({ auth,logout}) => {
+
 
 const authLinks=(
   <ul>
@@ -29,10 +31,12 @@ Dashboard
 
 
  <li>
-   {user &&
+
+
+   {auth.user &&
    <Fragment>
 
- <Link to={`/Profileauth/${user._id}`}>
+ <Link to={`/profile/${auth.user._id}`}>
  <i class="far fa-user"></i></Link>
       
 
@@ -102,7 +106,7 @@ const  guestLinks=(
       
    
       
-     { (<Fragment>{ isAuthenticated ? authLinks : guestLinks  }</Fragment>)}
+     { (<Fragment>{ auth.isAuthenticated ? authLinks : guestLinks  }</Fragment>)}
     
     </nav>
        

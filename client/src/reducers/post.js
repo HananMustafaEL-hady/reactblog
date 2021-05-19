@@ -33,8 +33,7 @@ switch (type){
 
 
     case Get_Post:
-
-    return {
+        return {
         ...state,
         posts:payload,
         loading:false
@@ -43,7 +42,6 @@ switch (type){
 
 
     case Post_Error:
-
         return {
             ...state,
             error:payload,

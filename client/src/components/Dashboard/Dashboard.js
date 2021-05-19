@@ -7,21 +7,26 @@ import DashbordEdit from './DashbordEdit';
 
 import Experience from "./Experience";
 import Education from "./Education";
-
-
 import {deleteaccount, get_current_profile} from '../../actions/profile';
-const Dashboard = ({  get_current_profile,
-    auth:{user},deleteaccount
-    
-    ,profile:{profile,loading}}) => {
 
+
+
+const Dashboard = ({ 
+     get_current_profile,
+    auth:{user},
+    deleteaccount
+    ,profile:{profile,loading}
+
+}) => {
+
+    
 
     useEffect(()=>{
 
         get_current_profile();
     },[get_current_profile]);// added as dependency
 
-
+console.log(profile);
 
     return loading && profile==null?<Spinner/>:
     <Fragment>
@@ -77,13 +82,14 @@ profile!==null?
 
 </Fragment>:
 <Fragment>
-<p> you have not profile</p>
+{/* <p> you have not profile</p>
     <Link to="/create-profile" className="btn btn-primary my-1">
 
 
 Create Profile
 
-    </Link>
+    </Link> */}
+    <Spinner/>
 
 </Fragment>
     

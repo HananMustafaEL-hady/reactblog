@@ -144,7 +144,7 @@ router.get('/', async(req,res)=>{
 
 try {
 
-    const profiles=await Profile.find().populate('user',['name','avatar','image',,'email'])
+    const profiles=await Profile.find().populate('user',['name','avatar','image','email'])
     res.json(profiles);
 } catch (err) {
     
@@ -165,9 +165,17 @@ router.get('/user/:user_id', async(req,res)=>{
 
     try {
     
-        const profile=await Profile.findOne({user:req.params.user_id}).populate('user',['name','avatar','image',,'email'])
+        const profile=await Profile.findOne({user:req.params.user_id}).populate('user',['name','avatar','image','email'])
 
-        if(!profile) return res.status(400).json({msg:'there is no profile for this user '});
+        if(!profile){
+            profile = await Profile.create({ user:  req.params.user_id  });
+            profile = await Profile.findOne({ user: req.user.id }).populate("user", [
+                "name",
+                "email",
+                'avatar','image','email'
+      
+              ]);
+        }
         res.json(profile);
     } catch (err) {
     

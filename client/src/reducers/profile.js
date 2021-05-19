@@ -52,7 +52,7 @@ export  default function (state=initialState,action){
             ...state,
             profile:null,
             
-            loading :true
+            loading :false
         }
 
         case get_profiles:

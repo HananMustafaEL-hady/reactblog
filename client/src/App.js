@@ -33,6 +33,8 @@ if(localStorage.token){
 
 const App=()=> {
 
+  
+
 
   useEffect(()=>{
 
@@ -65,8 +67,7 @@ const App=()=> {
 
 <Route  exact path="/profiles" component ={Profiles}/>
 
-<Route  exact path="/Profile/:id" component ={Profile}/>
-<Route  exact path="/Profileauth/:id" component ={Profile}/>
+<Route  exact path="/profile/:id" component ={Profile}/>
 
 
 <Route   path="/Posts" component ={Posts}/>

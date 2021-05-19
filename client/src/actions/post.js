@@ -19,7 +19,7 @@ getsinglepost ,
 AddComment,
 RemoveComment ,
 uploadimgpost,  
-Set_alert
+profile_clear
 } from './type';
 
 
@@ -39,6 +39,7 @@ export const GetPosts=()=>async dispatch=>{
 
 
 
+        dispatch({type:profile_clear})
         
     } catch (err) {
 

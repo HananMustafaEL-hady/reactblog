@@ -7,7 +7,7 @@ import{Register_success,Register_fail,userloaded,
  
     import {setAlert} from './alert';
 
-
+import {get_current_profile} from './profile';
 
 import SetToken from '../helper/authToken';
 import {
@@ -26,7 +26,7 @@ export const register =({name,email,password,city,age})=> async dispatch=>{
 
 const config={
     headers:{
-       "Content-Type" :"application/json"
+        "Content-Type" :"application/json"
     }
 }
 
@@ -42,6 +42,10 @@ try {
         payload: res.data
 
     });
+    dispatch(loadUser());
+    dispatch(get_current_profile());
+
+
 } catch (err) {
 
     const errors=err.response.data.errors;
@@ -89,7 +93,7 @@ try {
 
     })
 
-    dispatch(loadUser());
+    // dispatch(loadUser());
 
 } catch (err) {
 
@@ -110,6 +114,7 @@ export const login =(email,password)=> async dispatch=>{
     const config={
         headers:{
            "Content-Type" :"application/json"
+
         }
     }
     
@@ -164,7 +169,7 @@ export const login =(email,password)=> async dispatch=>{
 
 
 export const logout=()=>dispatch=>{
-    dispatch({type:profile_clear})
+    dispatch({type:profile_clear});
 
        dispatch({type:LOGOUT} );
 }

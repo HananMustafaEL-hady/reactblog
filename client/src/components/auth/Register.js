@@ -65,7 +65,7 @@ setAlert('passwords do not match','error');
 
 if(isAuthenticated){
 
-return <Redirect to="/dashboard" />
+return <Redirect to="/dashboard"/>
 
 }
     return (
@@ -162,4 +162,4 @@ const mapStateProps=state=>({
   isAuthenticated: state.auth.isAuthenticated
 
 });
-export default connect(mapStateProps,{ register,setAlert}) (Register);
+export default connect(mapStateProps,{ setAlert,register}) (Register);
