@@ -40,7 +40,7 @@ const PostItem = ({
                 {post.image ? (
                   <img
                     class="round-img"
-                    src={`http://localhost:4001/api/upload/show/${post.image}`}
+                    src={`https://myblog456.herokuapp.com/api/upload/show/${post.image}`}
                     alt=""
                   />
                 ) : (
