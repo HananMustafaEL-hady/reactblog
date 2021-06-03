@@ -29,7 +29,7 @@ const PostItem = ({
             {post.imagepost && (
               <img
                 className=" fakeimg"
-                src={`http://localhost:4001/api/upload/show/${post.imagepost.filename}`}
+                src={`https://myblog456.herokuapp.com/api/upload/show/${post.imagepost.filename}`}
                 alt=""
               />
             )}
